@@ -37,7 +37,9 @@ A Flatpak manifest lives in `flatpak/`. Flathub submission is planned; until
 then you can build locally:
 
 ```sh
-flatpak install flathub org.electronjs.Electron2.BaseApp//24.08
+flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install --user flathub org.freedesktop.Platform//25.08 org.freedesktop.Sdk//25.08 \
+  org.electronjs.Electron2.BaseApp//25.08 org.freedesktop.Sdk.Extension.node24//25.08
 flatpak-builder --user --install --force-clean build-dir flatpak/io.github.greugreu.Helios.yml
 ```
 
